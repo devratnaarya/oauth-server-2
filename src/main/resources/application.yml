@@ -1,0 +1,28 @@
+spring:
+    datasource:
+#        hikari:
+#            connection-test-query: SELECT 1 FROM DUAL
+#            minimum-idle: 1
+#            maximum-pool-size: 5
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        jdbc-url: jdbc:mysql://localhost:3306/auth
+        username: dev
+        password: dev12345
+        initialization-mode: always
+        
+    jpa:
+      show-sql: false
+      hibernate:
+        ddl-auto: none
+      database: mysql
+        
+server:
+  port: 8081
+  
+security:
+  oauth2:
+    client:
+      client-id: cliente
+      client-secret: password
+      scope: read,write
+      auto-approve-scopes: '.*'
